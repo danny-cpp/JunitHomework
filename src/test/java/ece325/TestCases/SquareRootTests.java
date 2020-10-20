@@ -18,7 +18,7 @@ public class SquareRootTests {
 
     @Before 
     public void setUp() throws Exception {
-        Calculator calc = new Calculator();
+        calc = new Calculator();
     }
 
     @After 
@@ -35,19 +35,23 @@ public class SquareRootTests {
     @Test 
     public void testRandomNegitiveSquareRoot() {
         // The result should be a complex number i.e. Double.isNaN()
-        
+        double a = Math.random() * -100000000;
+        Double res = calc.sqrt(a).doubleValue();
+        assertTrue(res.isNaN());
     }
 
     @Test 
     public void testSquareRootofZero() {
         // You cannot use the Math.sqrt() function in the test!
-        
+        double res = calc.sqrt(0).doubleValue();
+        assertTrue(Math.abs(res - 0) < epsilon);
     }
 
     @Test 
     public void testSquareRootofOne() {
         // You cannot use the Math.sqrt() function in the test!
-        
+        double res = calc.sqrt(1).doubleValue();
+        assertTrue(Math.abs(res - 1) < epsilon);
     }
 
 }

@@ -55,6 +55,14 @@ public class Calculator {
         return (double)a + (double) b;
     }
 
+    /**
+     * Get roots of quadratic. Return array of 1 if double root, array of 2 NaN if
+     * complex root, and array 2 of 2 distinct root
+     * @param a
+     * @param b
+     * @param c
+     * @return Array of roots
+     */
     public Double[] getRoots(Double a, Double b, Double c) {
         Double delta = b*b - 4*a*c;
 
@@ -72,8 +80,19 @@ public class Calculator {
         }
 
         return new Double[] {r1, r2};
-
     }
 
+    public Double sqrt(Double a) {
+        return Math.sqrt(a);
+    }
 
+    public Double sqrt(Integer a) {
+        return Math.sqrt(a);
+    }
+
+    public static void main(String[] args) {
+        Calculator c = new Calculator();
+        Double res = c.sqrt(2);
+        System.out.println(res);
+    }
 }

@@ -1,0 +1,20 @@
+1. line 23 methods ignore return value:
+	Since String is immutable, calling replace needs to reference a new
+	object or reference to itself.
+	Fix: input = input.replace('e', 'o');
+
+2. line 24 compare String value use equals() instead of ==
+	Fix: if (input.equals("pool"))
+
+
+3. line 17 input reference null. It should not reference anything or "" to
+	prevent NullPointerException.
+	Fix: String input = "";
+
+4. line 23 deference pointer without null check, should add check
+	Fix: if (input != null)
+
+5. Should have null check for input verify block.
+	Fix: if (input != null) {
+		if (input.equals("pool")) {
+			...
