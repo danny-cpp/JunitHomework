@@ -13,9 +13,12 @@ import ece325.*;
 public class SquareRootTests {
 
     // TODO: Assignment 4 Part 2 -- Checkpoint4
+    private Calculator calc;
+    private double epsilon = 0.0000001;
 
     @Before 
     public void setUp() throws Exception {
+        Calculator calc = new Calculator();
     }
 
     @After 
@@ -24,8 +27,9 @@ public class SquareRootTests {
 
     @Test 
     public void testRandomPositiveSquareRoot() {
-        // You cannot use the Math.sqrt() function in the test!
-        
+        double a = Math.random() * 100000000;
+        double res = calc.sqrt(a).doubleValue();
+        assertTrue(Math.abs(res*res - a) < epsilon);
     }
 
     @Test 
